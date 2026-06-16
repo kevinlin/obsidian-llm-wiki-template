@@ -1,0 +1,23 @@
+{
+  "userIgnoreFilters": [
+    "_templates/",
+    "AGENTS.md",
+    "ATTRIBUTION.md",
+    "CLAUDE.md",
+    "README.md",
+    "Welcome.md",
+    "WIKI.md",
+    "wiki/hot.md",
+    "wiki/index.md",
+    "wiki/log.md",
+    "wiki/overview.md",
+    "wiki/canvases/overview.canvas",
+    "wiki/concepts/_index.md",
+    "wiki/entities/_index.md",
+    "wiki/sources/_index.md",
+    "wiki/meta/_index.md",
+    "youtube-transcript/"
+  ],
+  "alwaysUpdateLinks": true,
+  "defaultViewMode": "preview"
+}

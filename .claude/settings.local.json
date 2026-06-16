@@ -1,0 +1,10 @@
+{
+  "enabledPlugins": {
+    "obsidian@obsidian-skills": true
+  },
+  "permissions": {
+    "allow": [
+      "Skill(wiki-lint)"
+    ]
+  }
+}

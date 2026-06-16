@@ -1,0 +1,48 @@
+# Obsidian
+# workspace.json is intentionally tracked — ships with pre-configured graph view
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/**
+!.obsidian/plugins/calendar/data.json
+!.obsidian/plugins/thino/data.json
+
+# Excalidraw main.js is 8MB — downloaded by setup-vault.sh, not tracked in git
+.obsidian/plugins/obsidian-excalidraw-plugin/main.js
+
+# Large binary assets — add your own images to _attachments/images/
+# Uncomment the line below to exclude images from git (recommended for large vaults)
+# _attachments/images/
+.smart-connections/
+.obsidian-git-data
+.trash/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# User-specific attachments
+_attachments/
+
+# Ingestion folders
+.raw/
+.processed/
+youtube-transcript/
+
+# Clippings daemon
+.clippings-daemon.lock
+.clippings-daemon.log
+
+# Claude
+.claude/scheduled_tasks.lock
+.claude-plugin/
+
+# Cursor
+.history/
+
+# OpenCode
+config.json
