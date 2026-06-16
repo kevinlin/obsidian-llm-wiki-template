@@ -1,29 +1,63 @@
 ## What This Vault Is For
 
-This vault demonstrates the LLM Wiki pattern — a persistent, compounding knowledge base for Claude + Obsidian. Drop any source, ask any question, and the wiki grows richer with every session.
+This is a template for an **LLM Wiki** — a persistent, compounding knowledge base for Obsidian, driven by an AI agent (Claude Code or Cursor). Drop any source, ask any question, and the wiki grows richer with every session. Based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
+
+## Getting Started
+
+This repo is a template. There are two ways to start:
+
+1. **Use the checkout as your vault** — clone or check out this repo and open the folder directly in Obsidian (**Manage Vaults → Open folder as vault**). Point your agent (Claude Code or Cursor) at the same folder and start ingesting.
+2. **Copy into an existing folder** — copy every folder and file from this repo (`.claude/`, `.cursor/`, `_templates/`, `wiki/`, `CLAUDE.md`, etc.) into the folder where your documents already live, then open that folder in Obsidian and point your agent at it.
+
+Either way: drop a source into `.raw/`, then tell the agent `ingest [filename]`. Ask any question and the agent reads the index first, then drills into relevant pages.
 
 ## Vault Structure
 
 ```
-.raw/           source documents — immutable, Claude reads but never modifies
-wiki/           Claude-generated knowledge base
-_templates/     Obsidian Templater templates
+.raw/           source documents — immutable, the agent reads but never modifies
+.processed/     sources moved here after ingestion (gitignored)
+wiki/           agent-generated knowledge base
+_templates/     Obsidian Templater templates (concept, entity, source, question, comparison)
 _attachments/   images and PDFs referenced by wiki pages
+.claude/        agent config — skills/, commands/, agents/, hooks/
+.cursor/        Cursor rules (makes the same conventions first-class in Cursor)
 ```
 
-## How to Use
+## How the Wiki Works
 
-Drop a source file into `.raw/`, then tell Claude: "ingest [filename]".
+- **Read `wiki/hot.md` first** — recent session context (~500 words), loaded at session start.
+- **`wiki/index.md`** — master catalog; read after the hot cache, then drill into individual pages.
+- **`wiki/log.md`** — append-only operation log. Never edit past entries.
+- **Use wikilinks** (`[[Note Name]]`) for all internal references in wiki pages.
+- Run `lint the wiki` every 10–15 ingests to catch orphans and gaps.
 
-Ask any question. Claude reads the index first, then drills into relevant pages.
+## Skills & Commands
 
-Run `/wiki` to scaffold a new vault or check setup status.
+Skills live under `.claude/skills/<name>/SKILL.md`. The agent reads the matching skill when your request matches its trigger phrases.
 
-Run "lint the wiki" every 10-15 ingests to catch orphans and gaps.
+| Skill / Command | Use it to |
+|---|---|
+| `/wiki` | Set up, scaffold, or route to a sub-skill |
+| `ingest [source]` | Ingest one or many sources (creates 8–15 wiki pages) |
+| `query: [question]` / `what do you know about X?` | Answer from wiki content with citations |
+| `lint the wiki` | Health check: orphans, dead links, gaps |
+| `/save` | File the current conversation as a structured wiki note |
+| `/autoresearch [topic]` | Autonomous research loop: search, fetch, synthesize, file |
+| `/canvas` | Visual layer: add images, PDFs, and notes to an Obsidian canvas |
+
+Supporting skills: `defuddle` (clean web pages before ingest), `wiki-fold` (roll up log entries into meta-pages), and `obsidian-markdown` / `obsidian-bases` (Obsidian syntax references).
+
+## Naming Conventions
+
+- Wiki pages use **Title Case with spaces** (e.g. `Product Development Framework.md`)
+- Source summary pages use **kebab-case** to match their `.raw/` filenames (e.g. `beyond-vibe-checks.md`)
+- GitHub repo entity pages use **kebab-case** to match repository names
+
+Sources and repo entities preserve their original identifiers. This is intentional.
 
 ## Cross-Project Access
 
-To reference this wiki from another Claude Code project, add to that project's CLAUDE.md:
+To reference this wiki from another project, add to that project's CLAUDE.md:
 
 ```markdown
 ## Wiki Knowledge Base
@@ -38,27 +72,7 @@ When you need context not already in this project:
 Do NOT read the wiki for general coding questions or things already in this project.
 ```
 
-## Plugin Skills
-
-| Skill | Trigger |
-|-------|---------|
-| `/wiki` | Setup, scaffold, route to sub-skills |
-| `ingest [source]` | Single or batch source ingestion |
-| `query: [question]` | Answer from wiki content |
-| `lint the wiki` | Health check |
-| `/save` | File the current conversation as a structured wiki note |
-| `/autoresearch [topic]` | Autonomous research loop: search, fetch, synthesize, file |
-| `/canvas` | Visual layer: add images, PDFs, notes to Obsidian canvas |
-
-## Naming Conventions
-
-- Wiki pages use **Title Case with spaces** (e.g. `Product Development Framework.md`)
-- Source summary pages use **kebab-case** to match their `.raw/` filenames (e.g. `beyond-vibe-checks.md`)
-- GitHub repo entity pages use **kebab-case** to match repository names (e.g. `Ar9av-obsidian-wiki.md`)
-
-This is intentional. Sources and repo entities preserve their original identifiers.
-
 ## MCP (Optional)
 
-If you configured the MCP server, Claude can read and write vault notes directly.
-See `skills/wiki/references/mcp-setup.md` for setup instructions.
+If you configure the MCP server, the agent can read and write vault notes directly.
+See `.claude/skills/wiki/references/mcp-setup.md` for setup instructions.

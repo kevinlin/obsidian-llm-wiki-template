@@ -48,7 +48,7 @@ Both items 7 and 8 are opt-in. Before running them:
 
 If the vault has not adopted DragonScale, skip items 7 and 8. The other checks still run.
 
-Full procedure, schema for the `## Address Validation` and `## Semantic Tiling` sub-sections of the lint report, and banded-threshold behavior are documented in `skills/wiki-lint/SKILL.md`. This agent follows that skill spec.
+Full procedure, schema for the `## Address Validation` and `## Semantic Tiling` sub-sections of the lint report, and banded-threshold behavior are documented in `.claude/skills/wiki-lint/SKILL.md`. This agent follows that skill spec.
 
 ## Output
 

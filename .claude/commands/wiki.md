@@ -4,7 +4,7 @@ description: Bootstrap or check the Obsidian LLM wiki vault. Reads the wiki skil
 
 Read the `wiki` skill. Then run the setup workflow:
 
-1. Check if Obsidian is installed. If not, offer to install it (see `skills/wiki/references/plugins.md`).
+1. Check if Obsidian is installed. If not, offer to install it (see `.claude/skills/wiki/references/plugins.md`).
 2. Check if this directory has a vault (look for `.obsidian/` folder). If yes, report current vault state.
 3. Check if the MCP server is configured (`claude mcp list`). If not, ask if the user wants to set it up.
 4. Ask ONE question: "What is this vault for?"

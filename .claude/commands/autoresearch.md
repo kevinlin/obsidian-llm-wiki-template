@@ -10,7 +10,7 @@ Usage:
 
 DragonScale Mechanism 4 is labeled **agenda control** in the spec because it shapes what the agent researches next; it is not pure memory. The boundary score is a heuristic surfacing candidates, not an authoritative recommendation.
 
-Before starting, read `skills/autoresearch/references/program.md` to load the research constraints and objectives.
+Before starting, read `.claude/skills/autoresearch/references/program.md` to load the research constraints and objectives.
 
 If no vault is set up yet, say: "No wiki vault found. Run /wiki first to set one up."
 

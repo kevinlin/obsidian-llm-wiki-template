@@ -154,7 +154,7 @@ Token budget matters. Follow these rules during ingest:
 ## Contradictions
 
 > [!note] Custom callout dependency
-> The `[!contradiction]` callout type used below is a **custom callout** defined in `.obsidian/snippets/vault-colors.css` (auto-installed by `/wiki` scaffold). It renders with reddish-brown styling and an alert-triangle icon when the snippet is enabled. If the snippet is missing, Obsidian falls back to default callout styling, so the page still works without the visual flourish. See [[skills/wiki/references/css-snippets.md]] for the four custom callouts (`contradiction`, `gap`, `key-insight`, `stale`).
+> The `[!contradiction]` callout type used below is a **custom callout** defined in `.obsidian/snippets/vault-colors.css` (auto-installed by `/wiki` scaffold). It renders with reddish-brown styling and an alert-triangle icon when the snippet is enabled. If the snippet is missing, Obsidian falls back to default callout styling, so the page still works without the visual flourish. See `.claude/skills/wiki/references/css-snippets.md` for the four custom callouts (`contradiction`, `gap`, `key-insight`, `stale`).
 
 When new info contradicts an existing wiki page:
 
