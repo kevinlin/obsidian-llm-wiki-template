@@ -26,11 +26,11 @@ A template Obsidian vault that builds persistent, compounding knowledge bases us
 | `wiki-ingest` | Ingest a file, URL, or image: creates 8-15 wiki pages |
 | `wiki-query` | Answer questions from the wiki (Quick / Standard / Deep modes) |
 | `wiki-lint` | Health check: orphans, dead links, gaps |
+| `wiki-fold` | Roll up log entries into meta-pages |
 | `save` | File current conversation as a wiki note |
 | `autoresearch` | Autonomous research loop |
 | `canvas` | Create/edit Obsidian canvas files |
 | `defuddle` | Clean web pages before ingest |
-| `wiki-fold` | Roll up log entries into meta-pages |
 | `obsidian-markdown` | Obsidian syntax reference |
 | `obsidian-bases` | Obsidian Bases (.base files) |
 
