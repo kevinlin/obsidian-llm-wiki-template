@@ -6,9 +6,7 @@ Read the `autoresearch` skill. Then run the research loop.
 
 Usage:
 - `/autoresearch [topic]` — research a specific topic.
-- `/autoresearch` — if DragonScale Mechanism 4 (boundary-first, agenda-control, opt-in) is set up, offer the top 5 vault-frontier pages as topic candidates; you can **pick one**, **type a topic to override**, or **decline and be asked normally**. No automatic selection happens without user confirmation. If DragonScale is not set up OR the helper fails, the command falls back to "What topic should I research?"
-
-DragonScale Mechanism 4 is labeled **agenda control** in the spec because it shapes what the agent researches next; it is not pure memory. The boundary score is a heuristic surfacing candidates, not an authoritative recommendation.
+- `/autoresearch` — if no topic is given, ask "What topic should I research?"
 
 Before starting, read `.claude/skills/autoresearch/references/program.md` to load the research constraints and objectives.
 

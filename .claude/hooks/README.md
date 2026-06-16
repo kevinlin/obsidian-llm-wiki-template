@@ -8,7 +8,7 @@ Agent hooks for the LLM Wiki vault, used by Claude Code. All hooks are defined i
 |---|---|---|
 | `SessionStart` | command + prompt | Loads `wiki/hot.md` into context at the start of a session. The command `[ -f wiki/hot.md ] && cat wiki/hot.md` is the canonical check (safe in non-vault folders); the prompt complements it with semantic context restoration. Matcher: `startup` / `resume`. |
 | `PostCompact` | prompt | Re-loads `wiki/hot.md` after context compaction. Hook-injected context does not survive compaction (only `CLAUDE.md` does), so this restores the hot cache mid-session. |
-| `PostToolUse` | command | Auto-commits `wiki/`, `.raw/`, and `.vault-meta/` changes after a Write or Edit. Guarded by `[ -d .git ]` (never errors outside a git repo) and `git diff --cached --quiet` (never creates empty commits). |
+| `PostToolUse` | command | Auto-commits `wiki/` and `.raw/` changes after a Write or Edit. Guarded by `[ -d .git ]` (never errors outside a git repo) and `git diff --cached --quiet` (never creates empty commits). |
 | `Stop` | prompt | At the end of a response, if wiki pages changed, asks the agent to refresh `wiki/hot.md` with a brief summary. |
 
 ## Getting Started

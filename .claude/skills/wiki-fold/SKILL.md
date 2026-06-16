@@ -5,7 +5,7 @@ description: "Rollup of wiki log entries into meta-pages. Reads the last 2^k ent
 
 # wiki-fold: Extractive Log Rollup
 
-Implements a bounded subset of Mechanism 1 from [[DragonScale Memory]]: flat fold over raw `wiki/log.md` entries. Fold-of-folds (hierarchical level-stacking) is **out of scope for this skill**; see "Scope boundary" below.
+Implements a flat fold over raw `wiki/log.md` entries. Fold-of-folds (hierarchical level-stacking) is **out of scope for this skill**; see "Scope boundary" below.
 
 A fold is **additive**: child log entries and their referenced pages are never modified, moved, or deleted. A fold is **extractive**: every outcome and theme in the output must be traceable to a specific child log entry. No invented facts, no synthesis beyond what the child entries support.
 
@@ -14,9 +14,8 @@ A fold is **additive**: child log entries and their referenced pages are never m
 ## Scope boundary (explicit)
 
 This skill does **not** implement:
-- Fold-of-folds / hierarchical level stacking (DragonScale spec calls for it; deferred to a future skill).
-- Automatic triggering (folds are always human-invoked in Phase 1).
-- Semantic-tiling dedup (Mechanism 3; separate skill).
+- Fold-of-folds / hierarchical level stacking (deferred to a future skill).
+- Automatic triggering (folds are always human-invoked).
 
 It **does** implement:
 - Flat fold over raw log.md entries at a chosen batch exponent `k`.
@@ -87,12 +86,12 @@ Build a structured children list:
 children:
   - date: "2026-04-23"
     op: "save"
-    title: "DragonScale Memory v0.2 — post-adversarial-review"
-    page: "[[DragonScale Memory]]"
+    title: "Retrieval Augmented Generation v0.2 — review pass"
+    page: "[[Retrieval Augmented Generation]]"
   - ...
 ```
 
-One record per log entry. Do not dedupe by page: if two entries both point to `[[DragonScale Memory]]`, both records appear, distinguishable by date and title.
+One record per log entry. Do not dedupe by page: if two entries both point to `[[Retrieval Augmented Generation]]`, both records appear, distinguishable by date and title.
 
 ### 3. Read referenced pages (bounded)
 

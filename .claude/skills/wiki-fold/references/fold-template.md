@@ -31,7 +31,7 @@ children:
     page_missing: false
   # ... one record per log entry. No dedupe by page.
 related:
-  - "[[DragonScale Memory]]"
+  - "[[Retrieval Augmented Generation]]"
   - "[[log]]"
   - "[[index]]"
 ---
@@ -58,8 +58,8 @@ One row per log entry. Row count must equal `entry_count` in frontmatter and the
 
 | Date | Op | Title | Page | Summary (extractive) |
 |---|---|---|---|---|
-| 2026-04-23 | save | DragonScale Memory v0.2 — post-adversarial-review | [[DragonScale Memory]] | Adversarial-review rewrite; 7/7 critiques accepted after one surgical fix. |
-| 2026-04-15 | save | Claude SEO v1.9.0 Slides and GitHub Release | [[2026-04-15-slides-and-release-session]] | 15-slide HTML deck, v1.9.0 tagged, GitHub release with PDF asset. |
+| 2026-04-23 | save | Retrieval Augmented Generation v0.2 — review pass | [[Retrieval Augmented Generation]] | Review-pass rewrite; clarified chunking strategy and citation format. |
+| 2026-04-15 | ingest | Vector Database Benchmarks 2026 | [[2026-04-15-vector-db-benchmarks]] | Compared 5 vector stores on recall and latency; pgvector competitive at small scale. |
 <!-- one row per log entry; no dedupe by page -->
 ```
 
@@ -118,7 +118,7 @@ The `Child Pages` section is **deduped by page**: one wikilink per unique target
 
 ## Related
 
-- [[DragonScale Memory]] - fold-operator spec
+- [[Retrieval Augmented Generation]] - representative child page
 - [[log]] - source entries
 - [[index]] - vault catalog
 ```
