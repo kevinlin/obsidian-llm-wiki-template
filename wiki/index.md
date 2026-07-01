@@ -14,7 +14,7 @@ status: evergreen
 
 # Wiki Index
 
-Last updated: 2026-06-08 | Total pages: 215 | Sources ingested: 38
+Last updated: 2026-06-08 | Total pages: 0 | Sources ingested: 0
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[getting-started]]
 
