@@ -35,7 +35,6 @@ Copy every folder and file from this repo into the folder where your documents a
 
 ```
 .claude/        skills, commands, agents, hooks
-.cursor/        Cursor rules
 _templates/     Obsidian Templater templates
 wiki/           starter knowledge base
 CLAUDE.md       agent instructions (auto-loaded)
@@ -120,8 +119,6 @@ obsidian-llm-wiki-template/
 │   ├── commands/                # /wiki, /save, /autoresearch, /canvas
 │   ├── agents/                  # wiki-ingest + wiki-lint subagents
 │   └── hooks/                   # hot-cache + auto-commit hooks (hooks.json)
-├── .cursor/
-│   └── rules/                   # always-applied rule mirroring the conventions
 ├── _templates/                  # concept, entity, source, question, comparison
 ├── wiki/
 │   ├── index.md                 # master catalog

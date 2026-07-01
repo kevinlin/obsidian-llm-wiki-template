@@ -41,8 +41,5 @@ youtube-transcript/
 .claude/scheduled_tasks.lock
 .claude-plugin/
 
-# Cursor
-.history/
-
 # OpenCode
 config.json

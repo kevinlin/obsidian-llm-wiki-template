@@ -15,7 +15,6 @@ Either way: drop a source into `.raw/`, then tell the agent `ingest [filename]`.
 
 ```
 .claude/        agent config — skills/, commands/, agents/, hooks/
-.cursor/        Cursor rules (makes the same conventions first-class in Cursor)
 .processed/     sources moved here after ingestion (gitignored)
 .raw/           source documents — immutable, the agent reads but never modifies
 _attachments/   images and PDFs referenced by wiki pages
